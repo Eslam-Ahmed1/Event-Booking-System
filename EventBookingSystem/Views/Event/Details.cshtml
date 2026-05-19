@@ -1,0 +1,46 @@
+@model EventBookingSystem.Models.Event
+
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<h1>Event Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.title)</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.title)</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.date)</dt>
+        <dd class = "col-sm-9">@(Model?.date.ToString("f") ?? "Date not set")</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.location)</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.location)</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.total_seats)</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.total_seats)</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.available_seats)</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.available_seats)</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.image_url)</dt>
+        <dd class = "col-sm-9">
+            @if (!string.IsNullOrEmpty(Model?.image_url))
+            {
+                <img src="@Model.image_url" alt="@Model.title image" style="max-width: 200px;" />
+            }
+            else
+            {
+                <img src="~/images/default-event.png" alt="Default event image" style="max-width: 200px;" />
+            }
+        </dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.created_at)</dt>
+        <dd class = "col-sm-9">@(Model?.created_at.ToString("f") ?? "Unknown")</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.event_id" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|c:\\users\\mostafa\\source\\repos\\eventbookingsystem\\eventbookingsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|solutionrelative:eventbookingsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|c:\\users\\mostafa\\source\\repos\\eventbookingsystem\\eventbookingsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|solutionrelative:eventbookingsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|c:\\users\\mostafa\\source\\repos\\eventbookingsystem\\eventbookingsystem\\models\\applicaitondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|solutionrelative:eventbookingsystem\\models\\applicaitondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|c:\\users\\mostafa\\source\\repos\\eventbookingsystem\\eventbookingsystem\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|solutionrelative:eventbookingsystem\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|c:\\users\\mostafa\\source\\repos\\eventbookingsystem\\eventbookingsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE2C4918-4B84-4461-ADDD-E130189F68D3}|EventBookingSystem\\EventBookingSystem.csproj|solutionrelative:eventbookingsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 328,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicaitonDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\ApplicaitonDbContext.cs",
+              "RelativeDocumentMoniker": "EventBookingSystem\\Models\\ApplicaitonDbContext.cs",
+              "ToolTip": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\ApplicaitonDbContext.cs",
+              "RelativeToolTip": "EventBookingSystem\\Models\\ApplicaitonDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T16:41:39.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "EventBookingSystem\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "EventBookingSystem\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAGB0PRcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T16:21:06.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "EventBookingSystem\\Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\Booking.cs",
+              "RelativeToolTip": "EventBookingSystem\\Models\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T13:32:41.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "EventBookingSystem\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\Event.cs",
+              "RelativeToolTip": "EventBookingSystem\\Models\\Event.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T13:32:20.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\User.cs",
+              "RelativeDocumentMoniker": "EventBookingSystem\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Mostafa\\source\\repos\\EventBookingSystem\\EventBookingSystem\\Models\\User.cs",
+              "RelativeToolTip": "EventBookingSystem\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T13:12:01.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

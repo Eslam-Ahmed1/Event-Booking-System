@@ -1,0 +1,83 @@
+@model EventBookingSystem.Models.Event
+@{
+    ViewData["Title"] = "Book Event";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="@(string.IsNullOrEmpty(Model?.image_url) ? Url.Content("~/images/default-event.png") : Model.image_url)" 
+                             class="img-fluid rounded-start" 
+                             alt="@(Model?.title ?? "Event") image" 
+                             style="object-fit: cover; height: 100%; min-height: 250px;">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h3 class="card-title">@Model?.title</h3>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    @(Model?.date.ToString("dddd, dd MMMM yyyy") ?? "Date TBA") 
+                                    at @(Model?.date.ToString("hh:mm tt") ?? "Time TBA")
+                                </small>
+                            </p>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt-fill"></i> @Model?.location
+                            </p>
+                            <hr />
+                            <form asp-action="Create" method="post">
+                                @Html.AntiForgeryToken()
+                                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                                <input type="hidden" name="id" value="@Model?.event_id" />
+
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-auto">
+                                        <label for="numberOfTickets" class="col-form-label fw-bold">Number of Tickets:</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="number" id="numberOfTickets" name="numberOfTickets" 
+                                               class="form-control" value="1" min="1" max="@Model?.available_seats" 
+                                               @(Model?.available_seats == 0 ? "disabled" : "") />
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-muted">
+                                    <small>Available Seats: @Model?.available_seats</small>
+                                </p>
+
+                                <div class="d-grid gap-2 mt-4">
+                                    @if (Model?.available_seats > 0)
+                                    {
+                                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="btn btn-secondary" disabled>Sold Out</button>
+                                    }
+                                    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to Events</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        // Client-side validation for max tickets
+        document.getElementById('numberOfTickets')?.addEventListener('change', function() {
+            var max = parseInt(this.getAttribute('max'));
+            if (parseInt(this.value) > max) {
+                this.value = max;
+            }
+            if (parseInt(this.value) < 1) {
+                this.value = 1;
+            }
+        });
+    </script>
+}
