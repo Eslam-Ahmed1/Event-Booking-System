@@ -10,32 +10,36 @@
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Register</h2>
                     
-                    <form asp-action="register" method="post" id="registerForm">
+                    <form asp-action="register" method="post" id="registerForm" novalidate>
                         @Html.AntiForgeryToken()
                         <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
                         
                         <div class="form-group mb-3">
                             <label asp-for="name" class="control-label fw-bold">Name</label>
                             <input asp-for="name" class="form-control" placeholder="Enter your full name" />
+                            <div class="invalid-feedback">Please enter your full name.</div>
                             <span asp-validation-for="name" class="text-danger small"></span>
                         </div>
                         
                         <div class="form-group mb-3">
                             <label asp-for="email" class="control-label fw-bold">Email</label>
                             <input asp-for="email" class="form-control" placeholder="Enter your email" type="email" />
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
                             <span asp-validation-for="email" class="text-danger small"></span>
                         </div>
                         
                         <div class="form-group mb-3">
                             <label asp-for="password" class="control-label fw-bold">Password</label>
                             <input asp-for="password" type="password" class="form-control" placeholder="Enter password" />
+                            <div class="invalid-feedback">Password must be at least 6 characters long.</div>
                             <span asp-validation-for="password" class="text-danger small"></span>
-                            <small class="form-text text-muted">Password must be at least 8 characters long</small>
+                            <small class="form-text text-muted">Password must be at least 6 characters long</small>
                         </div>
                         
                         <div class="form-group mb-3">
                             <label asp-for="phone" class="control-label fw-bold">Phone Number</label>
                             <input asp-for="phone" class="form-control" placeholder="Enter your phone number" />
+                            <div class="invalid-feedback">Please enter a valid phone number.</div>
                             <span asp-validation-for="phone" class="text-danger small"></span>
                         </div>
                         
@@ -53,8 +57,58 @@
     </div>
 </div>
 
-<!-- IMPORTANT: Include validation scripts -->
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            // Get the input fields
+            var nameInput = document.querySelector('input[name="name"]');
+            var emailInput = document.querySelector('input[name="email"]');
+            var passwordInput = document.querySelector('input[name="password"]');
+            var phoneInput = document.querySelector('input[name="phone"]');
+            var isValid = true;
+
+            // Validate Name
+            if (!nameInput.value || nameInput.value.trim() === '') {
+                isValid = false;
+                nameInput.classList.add("is-invalid");
+            } else {
+                nameInput.classList.remove("is-invalid");
+                nameInput.classList.add("is-valid");
+            }
+
+            var emailPattern = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+
+            // Validate Email
+            if (!emailInput.value || !emailPattern.test(emailInput.value)) {
+                isValid = false;
+                emailInput.classList.add("is-invalid");
+            } else {
+                emailInput.classList.remove("is-invalid");
+                emailInput.classList.add("is-valid");
+            }
+
+            // Validate Password (ensure it's not empty and has a minimum length)
+            if (!passwordInput.value || passwordInput.value.length < 6) {
+                isValid = false;
+                passwordInput.classList.add("is-invalid");
+            } else {
+                passwordInput.classList.remove("is-invalid");
+                passwordInput.classList.add("is-valid");
+            }
+
+            // Validate Phone
+            if (!phoneInput.value || phoneInput.value.trim() === '') {
+                isValid = false;
+                phoneInput.classList.add("is-invalid");
+            } else {
+                phoneInput.classList.remove("is-invalid");
+                phoneInput.classList.add("is-valid");
+            }
+
+            // If validation fails, prevent the form from submitting
+            if (!isValid) {
+                event.preventDefault(); 
+            }
+        });
     </script>
 }

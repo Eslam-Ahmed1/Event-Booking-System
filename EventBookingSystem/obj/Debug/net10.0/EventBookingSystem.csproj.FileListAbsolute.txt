@@ -225,3 +225,5 @@ C:\Users\Mostafa\source\repos\EventBookingSystem\EventBookingSystem\bin\Debug\ne
 C:\Users\Mostafa\source\repos\EventBookingSystem\EventBookingSystem\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Mostafa\source\repos\EventBookingSystem\EventBookingSystem\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Mostafa\source\repos\EventBookingSystem\EventBookingSystem\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Mostafa\source\repos\EventBookingSystem\EventBookingSystem\obj\Debug\net10.0\EventBookingSystem.sourcelink.json
+C:\Users\Mostafa\source\repos\EventBookingSystem\EventBookingSystem\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -5,14 +5,15 @@ using System.Security.Claims;
 
 namespace EventBookingSystem.Controllers
 {
-   
+
     public class BookingController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public BookingController(ApplicationDbContext context)
+        private readonly ILogger<BookingController> _logger;
+        public BookingController(ApplicationDbContext context, ILogger<BookingController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: /Booking/Index
@@ -112,6 +113,35 @@ namespace EventBookingSystem.Controllers
 
             TempData["SuccessMessage"] = $"Successfully booked {numberOfTickets} ticket(s) for {eventToBook.title}!";
             return RedirectToAction("Index", "Home");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Cancel(int bookingId)
+        {
+            if (User.Identity == null || !User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("login", "Account");
+            }
+            _logger.LogInformation($"Cancel method called with id: {bookingId}");
+            var booking = await _context.Bookings.FindAsync(bookingId);
+            if (booking == null)
+            {
+                return NotFound();
+            }   
+            else
+            {
+                var eventItem = await _context.Events.FindAsync(booking.event_id);
+                if (eventItem == null){
+                    return NotFound();
+                }
+                else{
+                    eventItem.available_seats += booking.number_of_tickets;
+                    _context.Bookings.Remove(booking);
+                    await _context.SaveChangesAsync();
+                }
+            return RedirectToAction("Index", "Booking");
+            }
+        
         }
     }
 }

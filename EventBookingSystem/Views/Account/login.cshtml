@@ -6,16 +6,18 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h2 class="mb-4">Login</h2>
-            <form asp-action="login" method="post">
+            <form asp-action="login" method="post" id="loginForm" novalidate>
                 <div asp-validation-summary="All" class="text-danger mb-3"></div>
                 
                 <div class="form-group mb-3">
                     <label for="email" class="control-label">Email</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="password" class="control-label">Password</label>
                     <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required />
+                    <div class="invalid-feedback">Please enter your password.</div>
                 </div>
                 <div class="form-group d-grid">
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
@@ -28,6 +30,38 @@
     </div>
 </div>
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            // Get the input fields
+            var emailInput = document.querySelector('input[name="email"]');
+            var passwordInput = document.querySelector('input[name="password"]');
+            var isValid = true;
+
+            // Simple Regex pattern for validating email
+            var emailPattern = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+
+            // Validate Email
+            if (!emailInput.value || !emailPattern.test(emailInput.value)) {
+                isValid = false;
+                emailInput.classList.add("is-invalid");
+            } else {
+                emailInput.classList.remove("is-invalid");
+                emailInput.classList.add("is-valid");
+            }
+
+            // Validate Password
+            if (!passwordInput.value) {
+                isValid = false;
+                passwordInput.classList.add("is-invalid");
+            } else {
+                passwordInput.classList.remove("is-invalid");
+                passwordInput.classList.add("is-valid");
+            }
+
+            // If validation fails, prevent the form from submitting
+            if (!isValid) {
+                event.preventDefault(); 
+            }
+        });
     </script>
 }
